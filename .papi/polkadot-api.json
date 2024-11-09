@@ -1,0 +1,10 @@
+{
+  "version": 0,
+  "descriptorPath": ".papi/descriptors",
+  "entries": {
+    "ahpas": {
+      "chain": "paseo_asset_hub",
+      "metadata": ".papi/metadata/ahpas.scale"
+    }
+  }
+}
