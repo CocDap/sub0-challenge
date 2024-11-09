@@ -2,7 +2,7 @@
 # Submitting Challenge
 
 + Multicall : https://assethub-paseo.subscan.io/extrinsic/0x55ec0b26688b678be7539d893358bf5c6e15de5315996b9543af906bda36e6d7
-
++ Standards: https://assethub-paseo.subscan.io/extrinsic/0xf06427ad6888a72e06660f195b7727ee99c56cd16f3eaaab620410a94969cc4d
 
 # Small activities for Sub0 Reset by @vikiival
 

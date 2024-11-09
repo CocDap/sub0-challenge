@@ -35,7 +35,7 @@ export function createCollection({ api }: ApiPromise, { address }: CreateCollect
 			start_block: undefined,
 			end_block: undefined,
 			default_item_settings: 0n,
-			price: undefined
+			price: 10000n
 		}
 	}
 	// Address needs to be formatted as MultiAddress
