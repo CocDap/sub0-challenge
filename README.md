@@ -1,8 +1,14 @@
 
 # Submitting Challenge
 
-+ Multicall : https://assethub-paseo.subscan.io/extrinsic/0x55ec0b26688b678be7539d893358bf5c6e15de5315996b9543af906bda36e6d7
-+ Standards: https://assethub-paseo.subscan.io/extrinsic/0xf06427ad6888a72e06660f195b7727ee99c56cd16f3eaaab620410a94969cc4d
+1. Multicall : https://assethub-paseo.subscan.io/extrinsic/0x55ec0b26688b678be7539d893358bf5c6e15de5315996b9543af906bda36e6d7
+2. Standards: https://assethub-paseo.subscan.io/extrinsic/0xf06427ad6888a72e06660f195b7727ee99c56cd16f3eaaab620410a94969cc4d
+
+3. ERC721
++ Deploy:https://alephzero-testnet.subscan.io/extrinsic/0xa3d4fd3b79bdad5e77b9bd1a37ebab7fda84954a60c46228694d2471a20e54f0
++ Set Fee Mint: https://alephzero-testnet.subscan.io/extrinsic/0x417733661e2de9e7c1f9a9d7a7a5585b562e89de9c87fdddc8a24be5e0e58c01
++ Mint: https://alephzero-testnet.subscan.io/extrinsic/0xd4e6a2400c3f03135b3821a32d772df9a8ac1c14b39d4f60045e3830f0207a60
+
 
 # Small activities for Sub0 Reset by @vikiival
 

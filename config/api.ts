@@ -1,11 +1,12 @@
-import { ahpas, ahdot} from "@polkadot-api/descriptors";
+import { ahpas, ahdot, testAzero} from "@polkadot-api/descriptors";
 import { createClient, TypedApi } from "polkadot-api";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { polkadotConfig } from "./substrate";
 
 const typedApi = {
 	ahpas,
-	ahdot
+	ahdot,
+	testAzero
 };
 
 export type Chain = keyof typeof polkadotConfig;

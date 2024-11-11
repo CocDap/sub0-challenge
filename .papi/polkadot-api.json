@@ -9,6 +9,14 @@
     "ahdot": {
       "chain": "polkadot_asset_hub",
       "metadata": ".papi/metadata/ahdot.scale"
+    },
+    "testAzero": {
+      "wsUrl": "wss://aleph-zero-testnet-rpc.dwellir.com",
+      "metadata": ".papi/metadata/testAzero.scale"
     }
+  },
+  "ink": {
+    "erc721": ".papi/contracts/erc721.json",
+    "flipper": ".papi/contracts/flipper.json"
   }
 }

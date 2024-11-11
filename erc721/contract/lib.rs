@@ -75,6 +75,8 @@ mod erc721 {
         contract_uri: String,
         // base uri for token metadata
         base_uri: String,
+        // Mint fee
+        fee: u128,
     }
 
     #[derive(Debug, PartialEq, Eq, Copy, Clone)]
@@ -87,6 +89,8 @@ mod erc721 {
         CannotInsert,
         CannotFetchValue,
         NotAllowed,
+        NotEnoughBalance,
+        InvalidFee
     }
 
     /// Event emitted when a token transfer occurs.
@@ -134,7 +138,7 @@ mod erc721 {
             // create new instance of the contract
             // let caller = self.env().caller();
             Erc721 {
-                base_uri: String::from("https://dyndata.deno.dev/ink/content/xxx/"),
+                base_uri: String::from("https://gateway.pinata.cloud/ipfs/QmQqPEuak762ArPyMYWuMusWMaUmuNoxKT8aka8DhjUPN9"),
                 contract_uri: String::from("ipfs://bafkreicthpidyo3gznp3uuezvweiur7xcbo5qcwgw3x4teui2psoqxxbgq"),
                 ..Default::default()
             }
@@ -171,9 +175,16 @@ mod erc721 {
             Some(self.contract_uri.clone())
         }
 
+
         #[ink(message)]
         pub fn set_contract_uri(&mut self, uri: Option<String>) -> Result<(), Error> {
             self.contract_uri = uri.unwrap_or_default();
+            Ok(())
+        }
+
+        #[ink(message)]
+        pub fn set_mint_fee(&mut self, fee_amount: u128) -> Result<(), Error> {
+            self.fee = fee_amount;
             Ok(())
         }
 
@@ -235,9 +246,16 @@ mod erc721 {
         }
 
         /// Creates a new token.
-        #[ink(message)]
+        #[ink(message, payable)]
         pub fn mint(&mut self, id: TokenId) -> Result<(), Error> {
+
             let caller = self.env().caller();
+
+            let amount = self.env().transferred_value();
+            if amount != self.fee {
+                return Err(Error::InvalidFee);
+            }
+
             self.add_token_to(&caller, id)?;
             self.env().emit_event(Transfer {
                 from: Some(AccountId::from([0x0; 32])),
@@ -277,6 +295,12 @@ mod erc721 {
 
             Ok(())
         }
+
+        #[ink(message)]
+        pub fn get_mint_fee(&self) -> u128 {
+            self.fee
+        }
+
 
         /// Transfers token `id` `from` the sender to the `to` `AccountId`.
         fn transfer_token_from(

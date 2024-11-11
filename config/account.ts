@@ -54,6 +54,15 @@ export function addressOf(address: Uint8Array): string {
   return ss58.codec('polkadot').encode(value)
 }
 
+
+export function addressOfAlephZero(address: Uint8Array): string {
+	const value = address
+	if (!value) {
+	  return ''
+	}
+	return ss58.codec('substrate').encode(value)
+  }
+
 export function toMultiAddress(address: string): MultiAddress {
 	return MultiAddress.Id(address)
 }

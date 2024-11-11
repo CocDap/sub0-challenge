@@ -1,4 +1,4 @@
-import { ahdot, ahpas } from "@polkadot-api/descriptors";
+import { ahdot, ahpas, testAzero } from "@polkadot-api/descriptors";
 
 // https://metadata.parity.io/?tab=0#/kusama-statemine
 export const polkadotConfig = {
@@ -9,5 +9,9 @@ export const polkadotConfig = {
 	ahdot: {
 		wss: "wss://sys.ibp.network/asset-hub-polkadot",
 		client: ahdot,
+	},
+	testAzero: {
+		wss: "wss://aleph-zero-testnet-rpc.dwellir.com",
+		client: testAzero,
 	}
 };
